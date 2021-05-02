@@ -1,6 +1,16 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/Navigation.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+void _launchURL() async {
+  String url = "https://github.com/KirbyNguyen/budget";
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 class BudgetPage extends StatelessWidget {
   @override
@@ -105,6 +115,18 @@ class BudgetInformation extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText2.copyWith(
                         letterSpacing: 3.0,
                       ),
+                ),
+                SizedBox(height: 15),
+                TextButton(
+                  onPressed: _launchURL,
+                  child: Text(
+                    "GitHub Repo",
+                    style: Theme.of(context).textTheme.bodyText2.copyWith(
+                          fontSize: 30.0,
+                          color: Colors.red,
+                          decoration: TextDecoration.underline,
+                        ),
+                  ),
                 ),
               ],
             ),

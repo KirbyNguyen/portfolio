@@ -1,6 +1,17 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/Navigation.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+void _launchURL() async {
+  String url =
+      "https://drive.google.com/file/d/1ybMQw918769S7EFclA-rZHq0iqwpRWlb/view?usp=sharing";
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 class BobPage extends StatelessWidget {
   @override
@@ -30,7 +41,7 @@ class BobInformation extends StatelessWidget {
     return Column(
       children: <Widget>[
         Expanded(
-          flex: 2,
+          flex: 4,
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -82,17 +93,31 @@ class BobInformation extends StatelessWidget {
                         letterSpacing: 3.0,
                       ),
                 ),
+                SizedBox(height: 10),
                 Text(
                   "Three levels with three distinct enemy types",
                   style: Theme.of(context).textTheme.bodyText2.copyWith(
                         letterSpacing: 3.0,
                       ),
                 ),
+                SizedBox(height: 10),
                 Text(
                   "Collect fruits to increase points, and heal yourself!",
                   style: Theme.of(context).textTheme.bodyText2.copyWith(
                         letterSpacing: 3.0,
                       ),
+                ),
+                SizedBox(height: 15),
+                TextButton(
+                  onPressed: _launchURL,
+                  child: Text(
+                    "Download",
+                    style: Theme.of(context).textTheme.bodyText2.copyWith(
+                          fontSize: 30.0,
+                          color: Colors.red,
+                          decoration: TextDecoration.underline,
+                        ),
+                  ),
                 ),
               ],
             ),
