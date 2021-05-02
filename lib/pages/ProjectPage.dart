@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/components/Navigation.dart';
 
 class ProjectPage extends StatelessWidget {
   @override
@@ -16,8 +17,29 @@ class ProjectPage extends StatelessWidget {
             ],
           ),
         ),
-        child: Text("Project Page"),
+        child: ProjectInformation(),
       ),
+    );
+  }
+}
+
+class ProjectInformation extends StatelessWidget {
+  const ProjectInformation({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Expanded(
+          flex: 1,
+          child: Center(
+            child: Text("Project Page"),
+          ),
+        ),
+        Navigation(),
+      ],
     );
   }
 }
