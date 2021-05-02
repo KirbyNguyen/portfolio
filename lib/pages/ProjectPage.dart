@@ -47,7 +47,7 @@ class ProjectInformation extends StatelessWidget {
               children: <Widget>[
                 BudgetPrototype(),
                 SizedBox(width: 200),
-                BudgetPrototype(),
+                BlobAdventure(),
               ],
             ),
           ),
@@ -76,23 +76,103 @@ class BudgetPrototype extends StatelessWidget {
             children: <Widget>[
               Text(
                 "A BUDGET APP PROTOTYPE",
-                style: Theme.of(context).textTheme.bodyText2.copyWith(
+                style: Theme.of(context).textTheme.bodyText1.copyWith(
                       fontSize: 50.0,
+                      color: Colors.white,
                     ),
               ),
               TextButton(
-                onPressed: () {},
-                child: Text("Learn More"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "/budget");
+                },
+                child: Text(
+                  "Learn More",
+                  style: Theme.of(context).textTheme.bodyText2.copyWith(
+                        fontSize: 30.0,
+                        color: Colors.red,
+                        decoration: TextDecoration.underline,
+                      ),
+                ),
               ),
             ],
           ),
         ),
         Flexible(
           flex: 3,
-          child: Image.asset(
-            'screenshotsBudget/1.png',
-            scale: 2.0,
-            alignment: Alignment.bottomCenter,
+          child: CarouselSlider(
+            options: CarouselOptions(),
+            items: [1, 2, 3, 4, 5, 6, 7]
+                .map(
+                  (item) => Container(
+                    child: Center(
+                      child: Image.asset(
+                        'screenshotsBudget/$item.png',
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class BlobAdventure extends StatelessWidget {
+  const BlobAdventure({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      // crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Flexible(
+          flex: 1,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "BLOB'S ADVENTURE",
+                style: Theme.of(context).textTheme.bodyText1.copyWith(
+                      fontSize: 50.0,
+                      color: Colors.white,
+                    ),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/bob");
+                },
+                child: Text(
+                  "Learn More",
+                  style: Theme.of(context).textTheme.bodyText2.copyWith(
+                        fontSize: 30.0,
+                        color: Colors.red,
+                        decoration: TextDecoration.underline,
+                      ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Flexible(
+          flex: 3,
+          child: CarouselSlider(
+            options: CarouselOptions(),
+            items: [1, 2, 3, 4, 5, 6]
+                .map(
+                  (item) => Container(
+                    child: Center(
+                      child: Image.asset(
+                        'screenshotsBlob/$item.png',
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
           ),
         ),
       ],

@@ -19,17 +19,17 @@ class Navigation extends StatelessWidget {
               GestureDetector(
                   child: Text("HOME"),
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, "/home");
+                    Navigator.pushNamed(context, "/home");
                   }),
               GestureDetector(
                   child: Text("ABOUT"),
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, "/about");
+                    Navigator.pushNamed(context, "/about");
                   }),
               GestureDetector(
                   child: Text("PROJECTS"),
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, "/projects");
+                    Navigator.pushNamed(context, "/projects");
                   }),
             ],
           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/AboutPage.dart';
+import 'package:portfolio/pages/BobPage.dart';
+import 'package:portfolio/pages/BudgetPage.dart';
 import 'package:portfolio/pages/HomePage.dart';
 import 'package:portfolio/pages/ProjectPage.dart';
 
@@ -7,6 +9,8 @@ final appRoutes = {
   "/home": (context) => HomePage(),
   "/about": (context) => AboutPage(),
   "/projects": (context) => ProjectPage(),
+  "/budget": (context) => BudgetPage(),
+  "/bob": (context) => BobPage(),
 };
 
 void main() {
