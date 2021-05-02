@@ -12,6 +12,16 @@ void _launchURL() async {
   }
 }
 
+const List<String> budgetLink = [
+  "https://i.postimg.cc/G3Z4qdgb/1.png",
+  "https://i.postimg.cc/d1h0jx87/2.png",
+  "https://i.postimg.cc/PqrJPxJQ/3.png",
+  "https://i.postimg.cc/HxFkZ926/4.png",
+  "https://i.postimg.cc/wjk3qJqB/5.png",
+  "https://i.postimg.cc/htnfRMqw/6.png",
+  "https://i.postimg.cc/9f8MThq5/7.png",
+];
+
 class BudgetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -136,12 +146,12 @@ class BudgetInformation extends StatelessWidget {
           flex: 3,
           child: CarouselSlider(
             options: CarouselOptions(),
-            items: [1, 2, 3, 4, 5, 6, 7]
+            items: budgetLink
                 .map(
                   (item) => Container(
                     child: Center(
-                      child: Image.asset(
-                        'screenshotsBudget/$item.png',
+                      child: Image.network(
+                        item,
                       ),
                     ),
                   ),

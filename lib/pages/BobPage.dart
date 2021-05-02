@@ -35,6 +35,15 @@ class BobPage extends StatelessWidget {
   }
 }
 
+const List<String> bobLink = [
+  "https://i.postimg.cc/tgMqJNL9/1.png",
+  "https://i.postimg.cc/1Xxyc5mT/2.png",
+  "https://i.postimg.cc/W3q2kJvg/3.png",
+  "https://i.postimg.cc/L4f94fvM/4.png",
+  "https://i.postimg.cc/Kv2Z1zs3/5.png",
+  "https://i.postimg.cc/J0bMTVth/6.png",
+];
+
 class BobInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -127,12 +136,12 @@ class BobInformation extends StatelessWidget {
           flex: 3,
           child: CarouselSlider(
             options: CarouselOptions(),
-            items: [1, 2, 3, 4, 5, 6]
+            items: bobLink
                 .map(
                   (item) => Container(
                     child: Center(
-                      child: Image.asset(
-                        'screenshotsBlob/$item.png',
+                      child: Image.network(
+                        item,
                       ),
                     ),
                   ),

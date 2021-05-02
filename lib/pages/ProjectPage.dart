@@ -58,6 +58,16 @@ class ProjectInformation extends StatelessWidget {
   }
 }
 
+const List<String> budgetLink = [
+  "https://i.postimg.cc/G3Z4qdgb/1.png",
+  "https://i.postimg.cc/d1h0jx87/2.png",
+  "https://i.postimg.cc/PqrJPxJQ/3.png",
+  "https://i.postimg.cc/HxFkZ926/4.png",
+  "https://i.postimg.cc/wjk3qJqB/5.png",
+  "https://i.postimg.cc/htnfRMqw/6.png",
+  "https://i.postimg.cc/9f8MThq5/7.png",
+];
+
 class BudgetPrototype extends StatelessWidget {
   const BudgetPrototype({
     Key key,
@@ -101,12 +111,13 @@ class BudgetPrototype extends StatelessWidget {
           flex: 3,
           child: CarouselSlider(
             options: CarouselOptions(),
-            items: [1, 2, 3, 4, 5, 6, 7]
+            items: budgetLink
                 .map(
                   (item) => Container(
                     child: Center(
-                      child: Image.asset(
-                        'screenshotsBudget/$item.png',
+                      child: Image.network(
+                        item,
+                        scale: 1.0,
                       ),
                     ),
                   ),
@@ -118,6 +129,15 @@ class BudgetPrototype extends StatelessWidget {
     );
   }
 }
+
+const List<String> bobLink = [
+  "https://i.postimg.cc/tgMqJNL9/1.png",
+  "https://i.postimg.cc/1Xxyc5mT/2.png",
+  "https://i.postimg.cc/W3q2kJvg/3.png",
+  "https://i.postimg.cc/L4f94fvM/4.png",
+  "https://i.postimg.cc/Kv2Z1zs3/5.png",
+  "https://i.postimg.cc/J0bMTVth/6.png",
+];
 
 class BlobAdventure extends StatelessWidget {
   const BlobAdventure({
@@ -162,12 +182,12 @@ class BlobAdventure extends StatelessWidget {
           flex: 3,
           child: CarouselSlider(
             options: CarouselOptions(),
-            items: [1, 2, 3, 4, 5, 6]
+            items: bobLink
                 .map(
                   (item) => Container(
                     child: Center(
-                      child: Image.asset(
-                        'screenshotsBlob/$item.png',
+                      child: Image.network(
+                        item,
                       ),
                     ),
                   ),
