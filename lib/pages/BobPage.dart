@@ -133,7 +133,7 @@ class BobInformation extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 5,
+          flex: 3,
           child: CarouselSlider(
             options: CarouselOptions(),
             items: bobLink

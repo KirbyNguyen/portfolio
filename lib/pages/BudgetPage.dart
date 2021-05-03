@@ -50,7 +50,7 @@ class BudgetInformation extends StatelessWidget {
     return Column(
       children: <Widget>[
         Expanded(
-          flex: 2,
+          flex: 3,
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -143,7 +143,7 @@ class BudgetInformation extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 5,
+          flex: 4,
           child: CarouselSlider(
             options: CarouselOptions(),
             items: budgetLink
