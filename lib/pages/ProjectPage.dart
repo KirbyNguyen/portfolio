@@ -40,7 +40,7 @@ class ProjectInformation extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 4,
+          flex: 5,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -108,7 +108,7 @@ class BudgetPrototype extends StatelessWidget {
           ),
         ),
         Flexible(
-          flex: 3,
+          flex: 4,
           child: CarouselSlider(
             options: CarouselOptions(),
             items: budgetLink
@@ -117,7 +117,6 @@ class BudgetPrototype extends StatelessWidget {
                     child: Center(
                       child: Image.network(
                         item,
-                        scale: 1.0,
                       ),
                     ),
                   ),
@@ -179,7 +178,7 @@ class BlobAdventure extends StatelessWidget {
           ),
         ),
         Flexible(
-          flex: 3,
+          flex: 4,
           child: CarouselSlider(
             options: CarouselOptions(),
             items: bobLink
